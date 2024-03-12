@@ -5,25 +5,9 @@ import { boolean, object, string } from "yup";
 
 export const dynamic = 'force-dynamic' // defaults to auto
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const take = searchParams.get("take") ?? "10";
-  const skip = searchParams.get("skip") ?? "0";
-  if (isNaN(+take)) {
-    return NextResponse.json(
-      { message: "Take should be a numeric value" },
-      { status: 400 }
-    );
-  }
-  if (isNaN(+skip)) {
-    return NextResponse.json(
-      { message: "Skype should be a numeric value" },
-      { status: 400 }
-    );
-  }
-
+ 
   const pods = await prisma.pOD.findMany({
-    take: +take,
-    skip: +skip,
+
   });
 
   return NextResponse.json(pods);
