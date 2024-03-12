@@ -29,7 +29,6 @@ export const SinglePod = ({ pod }: Props) => {
     timeZone: 'America/Bogota',
   });
 
-  console.log(`${formattedDate} ${formattedTime}`);
 
   return (
     <div className=" px-4 py-2 border-2 border-gray-200 flex justify-between text-[0.8rem] flex-col md:flex-row">

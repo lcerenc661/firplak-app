@@ -19,7 +19,7 @@ import { POD } from "@prisma/client";
     
       const fetchData = async () => {
         try {
-          const response = await fetch(`/api/pod`);
+          const response = await fetch(`/api/pod`, { cache: 'no-store' });
           console.log()
           const data = await response.json();
           console.log(data);
