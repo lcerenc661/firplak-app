@@ -16,3 +16,14 @@ export const createPod = async (guia_de_Transporte:string, remision:string, obse
   
     return todo;
   };
+
+export const getPods = async (): Promise<POD[]> => {
+  const todo = await fetch(`/api/pod`,{
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    }
+  }
+  ).then((res) => res.json());
+  return todo;
+}
